@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(image/5c489908a9bd6c0022d5e17f.webp);
+  background-image: url(./assets/image/backgroundImg_1.webp);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -28,6 +28,7 @@ h3 {
   font-size: 90px;
   font-weight: bold;
   align-items: center;
+  text-shadow: 1px 1px 1px rgba(252, 248, 248, 0.5);
 }
 h2 {
   color: var(--color-text-white);
@@ -115,7 +116,7 @@ h2 {
   color: rgb(255, 5, 5);
 }
 .ico #icon:hover {
-  color: crimson !important;
+  color: #00aeff !important;
 }
 .ico {
   display: flex;
@@ -129,7 +130,188 @@ h2 {
   margin-right: auto;
   text-decoration: none;
 }
+#skills{
+  margin-top: ;
+}
+#skill .skillsContainer {
+  height: 35px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2px;
+  justify-content: space-between;
+}
 
+.bigB {
+  border: 2px solid;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px 40px;
+  margin-bottom: 15px;
+}
+.skillsContainer.html #progressBar {
+  height: 30px;
+  width: 90%;
+  border-radius: 20px;
+  background: rgb(248, 196, 51);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.skillsContainer.html #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+
+.skillsContainer.css #progressBar {
+  height: 30px;
+  width: 70%;
+  border-radius: 20px;
+  background: rgb(55, 100, 224);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.skillsContainer.css #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+
+.skillsContainer.js #progressBar {
+  height: 30px;
+  width: 75%;
+  border-radius: 20px;
+  background: rgb(89, 214, 187);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.skillsContainer.js #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+
+.skillsContainer.java #progressBar {
+  height: 30px;
+  width: 80%;
+  border-radius: 20px;
+  background: rgb(94, 47, 61);
+  transition: 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.skillsContainer.java #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+
+.html,
+.css,
+.js,
+.java {
+  margin-bottom: 4px;
+}
+
+#skill .tools {
+  height: 35px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2px;
+  justify-content: space-between;
+}
+#skill .toolsContainer {
+  border: 2px solid;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px 40px;
+}
+
+.toolsContainer .github #progressBar {
+  height: 30px;
+  width: 85%;
+  border-radius: 20px;
+  background: rgb(77, 75, 75);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+.toolsContainer .github #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+
+.toolsContainer .vscode #progressBar {
+  height: 30px;
+  width: 100%;
+  border-radius: 20px;
+  background: rgba(78, 149, 241, 0.938);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+.toolsContainer .vscode #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+.toolsContainer .intellij #progressBar {
+  height: 30px;
+  width: 100%;
+  border-radius: 20px;
+  background: rgba(142, 88, 243, 0.911);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+.toolsContainer .androidStudio #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+
+.toolsContainer .androidStudio #progressBar {
+  height: 30px;
+  width: 60%;
+  border-radius: 20px;
+  background: rgba(75, 245, 103, 0.911);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+.toolsContainer .intellij #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
+
+.vscode,.github,.intellij,.androidStudio{
+  margin-bottom: 4px;
+}
 @media (max-width: 600px) {
   .homeInfo p {
     font-size: 40px;
