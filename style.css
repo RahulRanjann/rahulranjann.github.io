@@ -130,9 +130,7 @@ h2 {
   margin-right: auto;
   text-decoration: none;
 }
-#skills{
-  margin-top: ;
-}
+
 #skill .skillsContainer {
   height: 35px;
   width: 100%;
@@ -143,7 +141,6 @@ h2 {
 }
 
 .bigB {
-  border: 2px solid;
   justify-content: space-between;
   padding-top: 10px;
   padding-right: 10px;
@@ -237,7 +234,6 @@ h2 {
   justify-content: space-between;
 }
 #skill .toolsContainer {
-  border: 2px solid;
   justify-content: space-between;
   padding-top: 10px;
   padding-right: 10px;
@@ -309,7 +305,10 @@ h2 {
   margin-left: 15px;
 }
 
-.vscode,.github,.intellij,.androidStudio{
+.vscode,
+.github,
+.intellij,
+.androidStudio {
   margin-bottom: 4px;
 }
 @media (max-width: 600px) {
