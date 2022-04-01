@@ -305,17 +305,26 @@ h2 {
   margin-left: 15px;
 }
 
+.toolsContainer .bootstrap #progressBar {
+  height: 30px;
+  width: 60%;
+  border-radius: 20px;
+  background: rgba(75, 245, 103, 0.911);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+.toolsContainer .Bootstrap #progressBar img {
+  height: 40px;
+  padding-top: 0px;
+  margin-top: -4px;
+  margin-bottom: 24px;
+  margin-left: 15px;
+}
 .vscode,
 .github,
 .intellij,
-.androidStudio {
+.androidStudio{
   margin-bottom: 4px;
-}
-
-#resume img {
-  width: 100%;
-  max-width: 429px;
-  height: auto;
 }
 
 @media (max-width: 600px) {
@@ -329,3 +338,4 @@ h2 {
     width: 15rem;
   }
 }
+
