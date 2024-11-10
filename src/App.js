@@ -8,7 +8,7 @@ import Experience from './component/page/Experience'
 import Projects from './component/page/Projects'
 import Resume from './component/page/Resume'
 import 'boxicons';
-import './App.css';
+// import './App.css';
 function App() {
   return (
     <div>

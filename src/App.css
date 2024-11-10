@@ -26,22 +26,19 @@ body {
 }
 
 
-.avatar {
+/* .avatar {
     display: flex;
     align-items: center;
     justify-content: center;
 
-}
+} */
 
-.avatar img {
-    /* background-color: #ffffff;  */
-    /* background-color: rgba(128, 128, 128, 0.121); */
-    /* border: #c1c1c1 solid 3px; */
+/* .avatar img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
     object-fit: contain;
-}
+} */
 
 .container {
     display: flex;
@@ -103,29 +100,25 @@ body {
 
 
 
-.name_box {
+/* .name_box {
     margin-bottom: 15px;
     font-size: 60px;
     font-family: "Quicksand", sans-serif;
-}
+} */
 
-.my_name {
+/* .my_name {
     color: #ffffff;
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
     font-size: 60px;
-}
+} */
 
 
-.description {
-    text-align: center;
-    margin-top: 20px;
-    /* margin-bottom: 20px; */
-    /* color: #393737; */
+/* .description {
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: 500;
-}
+} */
 
 .resume_download_btn .btn {
     margin-left: 15px;
