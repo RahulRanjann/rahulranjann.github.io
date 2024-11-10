@@ -13,7 +13,7 @@ function Home() {
             <div className="avatar flex items-center justify-center">
                 <img className="rounded-full w-72 h-72 object-contain" src={Avatar} alt="" />
             </div>
-            <div className="name_box mb-4 text-8xl font-sans" style={{ fontFamily: "'Quicksand', sans-serif" }}>
+            <div className="name_box mb-4 text-7xl font-sans" style={{ fontFamily: "'Quicksand', sans-serif" }}>
                 Hi, 👋 I'm <span className="my_name text-white font-bold text-8xl font-sans" style={{ fontFamily: "'Quicksand', sans-serif" }}>Rahul.</span>
             </div>
 
