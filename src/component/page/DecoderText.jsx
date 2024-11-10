@@ -77,7 +77,7 @@ const DecodeText = ({ dataArray = [] }) => {
     }, [currentIndex, dataArray]);
 
     return (
-        <div className="decode-text">
+        <div className="decode-text text-xl">
             <span className="static-character">I'm a</span> {/* Static 'A' */}
             {currentText.split("").map((char, index) => (
                 <div key={index} className={`text-animation state-1`}>
