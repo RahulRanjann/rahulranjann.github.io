@@ -21,7 +21,7 @@ function Home() {
                 {/* <Type /> Use the Type component */}
                 <DecoderText dataArray={data} />
             </div>
-            <div className="description text-center mt-5 pl-6 pr-6 text-white text-2xl font-medium">
+            <div className="description text-center mt-5 pl-7 pr-7 text-white text-2xl font-medium">
                 <p>
                     Born in 2000 in India. I believe coding and technology can bring about
                     positive change and innovation. With a mission to create impactful
