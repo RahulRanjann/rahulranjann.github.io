@@ -9,7 +9,7 @@ import SocialMedia from "../subComponent/SocialMedia";
 function Home() {
     const data = [" MITian.", " Programmer.", " Student.", " Developer."];
     return (
-        <div className="page_container">
+        <div className=" flex flex-col items-center justify-center m-[50px_100px_10px_100px]">
             <div className="avatar flex items-center justify-center">
                 <img className="rounded-full w-60 h-60 object-contain" src={Avatar} alt="" />
             </div>

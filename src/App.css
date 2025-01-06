@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Noto+Serif+KR:wght@200..900&family=Silkscreen:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Dancing+Script:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
 :root {
     margin: 0;
@@ -40,27 +41,27 @@ body {
     object-fit: contain;
 } */
 
-.container {
+/* .container {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 450px;
     margin: 0 20px;
     padding: 0;
-}
+} */
 
-.page_container {
+/* .page_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 50px 100px 10px 100px;
-}
+} */
 
-.page_link a {
+/* .page_link a {
     text-decoration: none;
     padding: 20px;
-}
+} */
 
 .page_link a:hover {
     -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -120,7 +121,7 @@ body {
     font-weight: 500;
 } */
 
-.resume_download_btn .btn {
+/* .resume_download_btn .btn {
     margin-left: 15px;
     background-color: #ffffff;
     border-radius: 50px;
@@ -135,17 +136,14 @@ body {
     height: 50px;
     padding: 0 25px;
     transition: all 200ms
-}
+} */
 
-.resume_download_btn .btn a {
+/* .resume_download_btn .btn a {
     text-decoration: none;
-    /* color: rgb(255, 255, 255); */
     color: #272727;
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
-
-
-}
+} */
 
 .resume_download_btn .btn:hover {
     background-color: #fafafa;
@@ -153,21 +151,21 @@ body {
     color: rgb(0, 0, 0);
 }
 
-.social_media_icon {
+/* .social_media_icon {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 35px;
-}
+} */
 
-.media_link {
+/* .media_link {
     margin: 0px 10px 0px 10px;
-}
+} */
 
-.media_link a {
+/* .media_link a {
     text-decoration: none;
 
-}
+} */
 
 .media_link img {
     border: 0px solid #d1d1d1;
@@ -633,7 +631,6 @@ project_box {
 /* Timeline.jsx ends here */
 
 /* educationtimeline.jsx starts here */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
 *,
 *::before,
