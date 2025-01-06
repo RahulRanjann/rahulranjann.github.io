@@ -7,7 +7,17 @@ import PL from "../../assets/logo/PineLimeLogo.png";
 const experienceData = [
     {
         type: 'work',
-        CompanyName: "Let's Transport",
+        CompanyName: "Lets Transport",  // Replace with the company's name
+        date: "Dec 2024 - Present",
+        title: "Digital Ads Automation & Full Stack Developer",
+        Location: "Bangalore, India",
+        description: "Developed web applications and automated workflows for optimizing ad performance and cost per click. Built data scraping scripts to gather insights from various websites and automated the upload process to a designated platform. Collaborated on strategies to improve digital ad revenue using Google Ads API and other automation tools.",
+        logo: LT, 
+        link: "https://www.letstransport.com/"
+    },
+    {
+        type: 'work',
+        CompanyName: "Lets Transport",
         date: "May 2024 - Aug 2024",
         title: "Full Stack Developer",
         Location: "Bangalore, India",
