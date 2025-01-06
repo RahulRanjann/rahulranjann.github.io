@@ -72,7 +72,7 @@ body {
     color: #b2a2f9;
 }
 
-.nav_container {
+/* .nav_container {
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 4px 5px 0 rgba(246, 246, 246, 0.37);
     backdrop-filter: blur(7px);
@@ -84,18 +84,18 @@ body {
     justify-content: center;
     padding: 15px 0;
     width: 35%;
-    /* Adjust width for responsiveness */
+
     position: fixed;
-    /* Sticks to the bottom of the screen */
+
     bottom: 20px;
-    /* Adjust distance from the bottom */
+
     left: 50%;
-    /* Align to center horizontally */
+
     transform: translateX(-50%);
-    /* Center it perfectly */
+
     z-index: 1000;
-    /* Ensures it stays above other content */
-}
+} */
+
 
 
 
