@@ -8,7 +8,7 @@ export default function Avatar({ collaborators }) {
                     <img
                         alt={`Avatar ${index + 1}`}
                         src={colab.img}
-                        className="avatar_img inline-block h-6 w-6 rounded-full ring-2 ring-white"
+                        className="avatar_img inline-block h-[50px] w-[50px] rounded-full ring-2 ring-white "
                     />
                 </a>
             ))}

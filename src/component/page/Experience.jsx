@@ -49,7 +49,7 @@ const experienceData = [
 
 const Experience = () => {
     return (
-        <div className='skill'>
+        <div className='skill  mt-0 mr-0 mb-[12px] ml-[10px] pt-[35px] pr-[200px] pb-[100px] pl-[200px]'>
             <Heading title="Experience" />
             <Timeline timelineData={experienceData} />
         </div>

@@ -34,7 +34,7 @@ const SocialMedia = () => {
                     {social.map(({link, logo}) => (
                         <div className="media_link m-[0px_10px_0px_10px]">
                             <a href={link} target="_blank" className='no-underline'>
-                                <img src={logo} alt="" />
+                                <img className=' border-0 border-solid border-[#d1d1d1] rounded-[20%] p-1 h-10 w-10' src={logo} alt="" />
                             </a>
                         </div>
                     ))}

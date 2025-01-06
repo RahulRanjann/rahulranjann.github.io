@@ -41,7 +41,7 @@ function Skills() {
     const [activeTab, setActiveTab] = useState("All"); // Default tab is "All"
 
     return (
-        <div className='skill'>
+        <div className='skill  m-[0px_0px_100px_0px] p-[50px_200px_0px_200px]'>
             <div className='grid grid-cols-2 grid-flow-row gap-4'>
                 <div className="">
                     <Heading title="Skills" />
