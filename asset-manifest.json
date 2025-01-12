@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.0804b18b.css",
-    "main.js": "/static/js/main.14b49d56.js",
+    "main.css": "/static/css/main.1a543838.css",
+    "main.js": "/static/js/main.bb3f1465.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "static/media/tour&traver.png": "/static/media/tour&traver.805d4696927b28943ab5.png",
+    "static/media/goMilestone.png": "/static/media/goMilestone.92ead1c8f72a5665e816.png",
     "static/media/ME.png": "/static/media/ME.e3d72a9a5fe1378aae99.png",
     "static/media/linux-original.svg": "/static/media/linux-original.0cb7bf4e5cb9ed5e2333d50935fad3d4.svg",
+    "static/media/githubApi.png": "/static/media/githubApi.d73581998249d9e3c8bf.png",
     "static/media/omsir.jpg": "/static/media/omsir.823e191bfb337252b098.jpg",
     "static/media/DSEULogo.png": "/static/media/DSEULogo.54a29dd74b1c2de89c9d.png",
     "static/media/mitLogo.png": "/static/media/mitLogo.aa0e9cfac53d353c6335.png",
@@ -45,12 +48,12 @@
     "static/media/materialui-original.svg": "/static/media/materialui-original.87264df237ee700ba78bb58ff701a6d3.svg",
     "static/media/npm-original-wordmark.svg": "/static/media/npm-original-wordmark.87689eab730642c86d2b01f3ef4a19e3.svg",
     "static/media/globe.svg": "/static/media/globe.319e6348653cb87fcd8439cd352616bd.svg",
-    "main.0804b18b.css.map": "/static/css/main.0804b18b.css.map",
-    "main.14b49d56.js.map": "/static/js/main.14b49d56.js.map",
+    "main.1a543838.css.map": "/static/css/main.1a543838.css.map",
+    "main.bb3f1465.js.map": "/static/js/main.bb3f1465.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0804b18b.css",
-    "static/js/main.14b49d56.js"
+    "static/css/main.1a543838.css",
+    "static/js/main.bb3f1465.js"
   ]
 }
