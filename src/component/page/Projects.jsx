@@ -6,8 +6,9 @@ import { Om, Rahul } from "../../assets/contri"; // Importing images correctly
 function Projects() {
     const projects = [
         {
-            img: "https://via.placeholder.com/500X400",
-            title: "My Awesome Project",
+            // img: githubImg,
+            img: require('../../assets/githubApi.png'),
+            title: "Github Api",
             desc: "This is a brief description of the project. lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, voluptas. Nemo, ipsam.",
             techStack: "HTML, CSS, JavaScript, Tailwind CSS, Node.js",
             websiteLink: "https://www.example.com",
@@ -26,8 +27,8 @@ function Projects() {
             ]
         },
         {
-            img: "https://via.placeholder.com/500X400",
-            title: "Another Cool Project",
+            img: require('../../assets/goMilestone.png'),
+            title: "GoMilestone",
             desc: "This is another project description.",
             techStack: "React, Express.js, MongoDB, Tailwind CSS",
             websiteLink: "https://www.example2.com",
@@ -41,8 +42,8 @@ function Projects() {
             ]
         },
         {
-            img: "https://via.placeholder.com/500X400",
-            title: "Another Cool Project",
+            img: require('../../assets/tour&traver.png'),
+            title: "TourTravel",
             desc: "This is another project description. lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, voluptas. Nemo, ipsam.", 
             techStack: "React, Express.js, MongoDB, Tailwind CSS, Node.js, html, css",
             websiteLink: "https://www.example2.com",

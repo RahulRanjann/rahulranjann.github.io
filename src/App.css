@@ -206,6 +206,17 @@ body {
     letter-spacing: 0;
 }
 
+.Project_Name{
+    color: #161515;
+    line-height: 223px;
+    font-family: "Dancing Script", cursive;
+    font-weight: 400;
+    font-size: 100px;
+    transform: translate3d(0px, -2vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+    letter-spacing: 0;
+}
+
 /* .about_description {
     color: #ffffff;
     text-align: left;
