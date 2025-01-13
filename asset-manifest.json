@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1a543838.css",
-    "main.js": "/static/js/main.bb3f1465.js",
+    "main.js": "/static/js/main.c2e73634.js",
     "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
     "static/media/tour&traver.png": "/static/media/tour&traver.805d4696927b28943ab5.png",
     "static/media/goMilestone.png": "/static/media/goMilestone.92ead1c8f72a5665e816.png",
@@ -49,11 +49,11 @@
     "static/media/npm-original-wordmark.svg": "/static/media/npm-original-wordmark.87689eab730642c86d2b01f3ef4a19e3.svg",
     "static/media/globe.svg": "/static/media/globe.319e6348653cb87fcd8439cd352616bd.svg",
     "main.1a543838.css.map": "/static/css/main.1a543838.css.map",
-    "main.bb3f1465.js.map": "/static/js/main.bb3f1465.js.map",
+    "main.c2e73634.js.map": "/static/js/main.c2e73634.js.map",
     "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a543838.css",
-    "static/js/main.bb3f1465.js"
+    "static/js/main.c2e73634.js"
   ]
 }
