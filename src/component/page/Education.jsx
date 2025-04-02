@@ -26,8 +26,10 @@ const educationData = [
 
 const Education = () => {
     return (
-        <div className='skill  mt-0 mr-0 mb-[12px] ml-[10px] pt-[35px] pr-[200px] pb-[100px] pl-[200px]'>
-            <Heading title="Education" />
+        <div className='skill mx-4 md:mx-8 lg:mx-20 xl:mx-[200px] my-8 md:my-10 lg:my-12 p-4 md:p-8 lg:p-[35px_0_100px_0]'>
+            <div className="w-full overflow-hidden">
+                <Heading title="Education" />
+            </div>
             <Timeline timelineData={educationData} />
         </div>
     );

@@ -4,7 +4,19 @@ import Heading from '../subComponent/Heading'
 import LT from "../../assets/logo/LTLogo.png";
 import GoMS from "../../assets/logo/GoMilestoneLogo.png";
 import PL from "../../assets/logo/PineLimeLogo.png";
+import Zinc from "../../assets/logo/zincLogo.png";
 const experienceData = [
+    {
+        type: 'work',
+        CompanyName: "Zinc",
+        date: "Jan 2025 - Present",
+        title: "QA Engineer",
+        Location: "Bangalore, India",
+        description: "I have automated the entire testing process in Zinc of ADA. I have also created a AI talk to ADA as parent.",
+        logo: Zinc,
+        link: "https://www.zinc.money"
+    },
+
     {
         type: 'work',
         CompanyName: "Lets Transport",  // Replace with the company's name
@@ -49,8 +61,10 @@ const experienceData = [
 
 const Experience = () => {
     return (
-        <div className='skill  mt-0 mr-0 mb-[12px] ml-[10px] pt-[35px] pr-[200px] pb-[100px] pl-[200px]'>
-            <Heading title="Experience" />
+        <div className='skill mx-4 md:mx-8 lg:mx-20 xl:mx-[200px] my-8 md:my-10 lg:my-12 p-4 md:p-8 lg:p-[35px_0_100px_0]'>
+            <div className="w-full overflow-hidden">
+                <Heading title="Experience" />
+            </div>
             <Timeline timelineData={experienceData} />
         </div>
     );

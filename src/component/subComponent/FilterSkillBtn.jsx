@@ -7,18 +7,18 @@ let tabs = [
     { id: "frameworks", label: "Frameworks" },
     { id: "databases", label: "Databases" },
     { id: "tools", label: "Tools" },
-    { id: "miscellaneous", label: "Miscellaneous" },
+    { id: "miscellaneous", label: "Misc" },
 ];
 
 const FilterSkillBtn = ({ activeTab, setActiveTab }) => {
     return (
-        <div className="flex space-x-1">
+        <div className="flex flex-wrap justify-center gap-1 md:gap-2">
             {tabs.map((tab) => (
                 <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)} // Change activeTab when clicked
                     className={`${activeTab === tab.id ? "" : "hover:text-white/60"
-                        } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+                        } relative rounded-full px-2 py-1 text-xs md:text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2 mb-1`}
                     style={{
                         WebkitTapHighlightColor: "transparent",
                     }}

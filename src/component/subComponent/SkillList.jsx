@@ -46,17 +46,17 @@ const SkillList = ({ activeTab }) => {
     const filteredSkills = AllLang.filter(skill => activeTab === "All" || skill.category === activeTab.toLowerCase());
 
     return (
-        <div className="p-6">
-            <div className="flex-wrap grid grid-cols-5 grid-flow-row gap-4 mb-20">
+        <div className="px-0 py-2">
+            <div className="grid grid-cols-4 gap-4 md:gap-4 lg:gap-6 mb-20">
                 {filteredSkills.map(({ icon, name }, index) => (
-                    <div className="section" key={index}>
-                        <div className="icon_holder flex flex-col items-center justify-center text-white font-medium shadow-[0_8px_15px_rgba(215,215,215,0.26)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.18)] relative transition-transform duration-300 ease-in-out w-[150px] h-[150px] bg-[rgba(250,250,250,0.26)]" style={{ width: "200px", height: "200px" }}>
+                    <div className="flex justify-center items-center mb-6" key={index}>
+                        <div className="icon_holder flex flex-col items-center justify-center text-white font-medium shadow-[0_8px_15px_rgba(215,215,215,0.26)] backdrop-blur-[20px] rounded-[10px] border border-[rgba(255,255,255,0.18)] relative transition-transform duration-300 ease-in-out bg-[rgba(250,250,250,0.26)] w-[150px] h-[150px]">
                             <img
-                                className="skill_icon  w-[120px] h-[120px]"
+                                className="skill_icon w-[80px] h-[80px]"
                                 src={icon}
                                 alt={name}
                             />
-                            <p className="skill_name m-0 p-0 font-quicksand text-center text-[20px] mt-2 opacity-0 visibility-hidden transition-opacity duration-500 ease-in-out">{name}</p>
+                            <p className="skill_name m-0 p-0 font-quicksand text-center text-[12px] mt-1 opacity-0 visibility-hidden transition-opacity duration-500 ease-in-out">{name}</p>
                         </div>
                     </div>
                 ))}

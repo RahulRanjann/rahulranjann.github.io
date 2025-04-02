@@ -50,9 +50,33 @@ const renderCustomIcon = (icon) => {
 
 const IconCloud = ({ iconSlugs }) => {
   const [data, setData] = useState(null);
+  const [dimensions, setDimensions] = useState({
+    width: "300px",
+    height: "300px"
+  });
 
   useEffect(() => {
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    
+    // Add responsive handling
+    function handleResize() {
+      if (window.innerWidth < 768) {
+        setDimensions({ width: "200px", height: "200px" });
+      } else if (window.innerWidth < 1024) {
+        setDimensions({ width: "250px", height: "250px" });
+      } else {
+        setDimensions({ width: "300px", height: "300px" });
+      }
+    }
+    
+    // Set dimensions on initial load
+    handleResize();
+    
+    // Add resize listener
+    window.addEventListener("resize", handleResize);
+    
+    // Clean up
+    return () => window.removeEventListener("resize", handleResize);
   }, [iconSlugs]);
 
   const renderedIcons = useMemo(() => {
@@ -64,10 +88,10 @@ const IconCloud = ({ iconSlugs }) => {
     <Cloud
       {...cloudProps}
       style={{
-        width: "100px",  // Set width to 400px
-        height: "100px", // Set height to 400px
-        margin: "30px",
-        padding: "15px",
+        width: dimensions.width,
+        height: dimensions.height,
+        margin: "10px",
+        padding: "10px",
       }}
     >
       {renderedIcons}
