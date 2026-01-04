@@ -29,35 +29,63 @@ export default function Experience() {
   }, [headingTyping.isComplete])
 
   useEffect(() => {
-    // Fetch GitHub contributions
+    // Fetch GitHub contributions directly from external API (no server-side API route needed)
     const fetchContributions = async () => {
       setLoadingContributions(true)
       try {
-        const response = await fetch(`/api/github-contributions?year=${selectedYear}&month=${selectedMonth}`)
+        // Calculate date range for the selected month
+        const startDate = new Date(selectedYear, selectedMonth - 1, 1)
+        const endDate = new Date(selectedYear, selectedMonth, 0)
+        const startDateString = startDate.toISOString().split('T')[0]
+        const endDateString = endDate.toISOString().split('T')[0]
+        
+        // Fetch directly from GitHub Contributions API
+        const apiUrl = `https://github-contributions-api.deno.dev/${GITHUB_USERNAME}.json?flat=true&from=${startDateString}&to=${endDateString}`
+        const response = await fetch(apiUrl, {
+          headers: {
+            'Accept': 'application/json',
+          },
+        })
+        
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
-        const data = await response.json()
-        console.log('Fetched contributions data:', {
-          contributionsCount: data.contributions?.length || 0,
-          total: data.total,
-          month: data.month,
-          year: data.year,
-          sample: data.contributions?.slice(0, 3)
+        
+        const apiData = await response.json()
+        
+        let contributions: Contribution[] = []
+        let totalContributions = 0
+        
+        if (apiData.contributions && Array.isArray(apiData.contributions)) {
+          // Map the API response to our format
+          contributions = apiData.contributions.map((contrib: { date?: string; contributionCount?: number }) => ({
+            date: contrib.date || '',
+            count: contrib.contributionCount || 0
+          })).filter((c: Contribution) => c.date && c.date.match(/^\d{4}-\d{2}-\d{2}$/))
+          
+          totalContributions = apiData.totalContributions || contributions.reduce((sum: number, contrib: Contribution) => sum + contrib.count, 0)
+        } else if (Array.isArray(apiData)) {
+          // Fallback: if API returns array directly (with flat=true)
+          contributions = apiData.map((contrib: { date?: string; contributionCount?: number; count?: number }) => ({
+            date: contrib.date || '',
+            count: contrib.contributionCount || contrib.count || 0
+          })).filter((c: Contribution) => c.date && c.date.match(/^\d{4}-\d{2}-\d{2}$/))
+          
+          totalContributions = contributions.reduce((sum: number, contrib: Contribution) => sum + contrib.count, 0)
+        }
+        
+        // Sort by date to ensure correct order
+        contributions.sort((a, b) => {
+          if (!a.date || !b.date) return 0
+          return a.date.localeCompare(b.date)
         })
         
-        if (data.contributions && Array.isArray(data.contributions)) {
-          setContributions(data.contributions)
-          setTotalContributions(data.total || 0)
-          console.log(`Set ${data.contributions.length} contributions, total: ${data.total}`)
-        } else {
-          console.warn('No contributions found or invalid format:', data)
-          setContributions([])
-          setTotalContributions(0)
-        }
+        setContributions(contributions)
+        setTotalContributions(totalContributions)
       } catch (error) {
         console.error('Error fetching contributions:', error)
         setContributions([])
+        setTotalContributions(0)
       } finally {
         setLoadingContributions(false)
       }
