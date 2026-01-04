@@ -1,0 +1,22 @@
+[00:00:02.577] Server  LOG      ✓ Ready in 2.4s
+[00:00:11.340] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:11.340] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:11.340] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554324724}
+[00:00:14.955] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:14.955] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about/ color: rgb(120, 120, 120) color: inherit {"dp":"/about/","o":"http://localhost:3000/about/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554328339}
+[00:00:27.598] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/projects/ color: rgb(120, 120, 120) color: inherit {"dp":"/projects/","o":"http://localhost:3000/projects/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554340983}
+[00:00:33.647] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/experience/ color: rgb(120, 120, 120) color: inherit {"dp":"/experience/","o":"http://localhost:3000/experience/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554347033}
+[00:00:34.994] Server  ERROR    ⨯ Error: export const dynamic = "force-static"/export const revalidate not configured on route "/api/github-contributions" with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
+[00:00:35.597] Browser ERROR   Error fetching contributions: {}
+[00:00:38.269] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/education/ color: rgb(120, 120, 120) color: inherit {"dp":"/education/","o":"http://localhost:3000/education/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554351653}
+[00:01:15.389] Server  LOG        Reload env: .env.local
+[00:02:10.101] Server  LOG        Reload env: .env.local
+[00:02:32.608] Server  LOG        Reload env: .env.local
+[00:02:36.417] Server  LOG        Reload env: .env.local
+[00:03:41.913] Server  LOG        Reload env: .env.local
+[00:03:45.143] Server  LOG        Reload env: .env.local
+[00:04:01.912] Server  LOG        Reload env: .env.local
+[00:04:08.605] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:08.605] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/contact/","route":"/contact/"}
+[00:04:08.605] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact/ color: rgb(120, 120, 120) color: inherit {"dp":"/contact/","o":"http://localhost:3000/contact/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554561990}
+[00:04:09.593] Browser LOG     EmailJS initialized successfully with public key: MzH2luE9Ps...
