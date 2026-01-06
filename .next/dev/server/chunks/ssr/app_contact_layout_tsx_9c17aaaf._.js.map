@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/lt/Desktop/rahulranjann.github.io/app/contact/layout.tsx"],"sourcesContent":["import { Metadata } from \"next\"\n\nexport const metadata: Metadata = {\n  title: \"Contact\",\n  description:\n    \"Get in touch with Rahul Ranjan - Full Stack Developer. Available for freelance projects, collaborations, and job opportunities.\",\n  keywords: [\n    \"Contact Developer\",\n    \"Hire Full Stack Developer\",\n    \"Freelance React Developer\",\n    \"Developer for Hire\",\n  ],\n  openGraph: {\n    title: \"Contact - Rahul Ranjan\",\n    description:\n      \"Get in touch with Rahul Ranjan for web development projects and collaborations.\",\n    url: \"https://rahulranjann-github-io.vercel.app/contact\",\n  },\n  alternates: {\n    canonical: \"https://rahulranjann-github-io.vercel.app/contact\",\n  },\n}\n\nexport default function ContactLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return children\n}\n"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAChC,OAAO;IACP,aACE;IACF,UAAU;QACR;QACA;QACA;QACA;KACD;IACD,WAAW;QACT,OAAO;QACP,aACE;QACF,KAAK;IACP;IACA,YAAY;QACV,WAAW;IACb;AACF;AAEe,SAAS,cAAc,EACpC,QAAQ,EAGT;IACC,OAAO;AACT"}}]
-}
