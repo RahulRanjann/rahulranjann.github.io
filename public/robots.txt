@@ -1,0 +1,12 @@
+# robots.txt for rahulranjann-github-io.vercel.app
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Block internal directories
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://rahulranjann-github-io.vercel.app/sitemap.xml

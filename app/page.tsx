@@ -73,13 +73,15 @@ export default function Home() {
   )
 
   return (
-    <main className="relative min-h-screen pt-16 flex items-center justify-center overflow-hidden">
+    <main className="relative min-h-screen pt-16 flex items-center justify-center overflow-hidden crt-flicker">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 cyber-grid opacity-50 pointer-events-none" />
         <div className="absolute inset-0 matrix-rain opacity-20 pointer-events-none" />
+        <div className="absolute inset-0 matrix-rain-v2 opacity-15 pointer-events-none" />
         <div className="absolute inset-0 binary-rain opacity-10 pointer-events-none" />
+        <div className="absolute inset-0 hex-bg opacity-30 pointer-events-none" />
         <div
           className="absolute inset-0 opacity-40 pointer-events-none"
           style={{
@@ -91,35 +93,57 @@ export default function Home() {
         {/* Animated border lines */}
         <div className="absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-pulse" />
         <div className="absolute bottom-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-pulse" />
+        
+        {/* Data stream lines */}
+        <div className="absolute top-1/3 left-0 right-0 h-px data-stream opacity-50" style={{ animationDelay: '0s' }} />
+        <div className="absolute top-2/3 left-0 right-0 h-px data-stream opacity-30" style={{ animationDelay: '1s' }} />
+        
         {/* Corner brackets with glow */}
         <div className="absolute top-20 left-4 w-16 h-16 border-t-2 border-l-2 border-primary/30 corner-glow" />
         <div className="absolute top-20 right-4 w-16 h-16 border-t-2 border-r-2 border-primary/30 corner-glow" />
         <div className="absolute bottom-4 left-4 w-16 h-16 border-b-2 border-l-2 border-primary/30 corner-glow" />
         <div className="absolute bottom-4 right-4 w-16 h-16 border-b-2 border-r-2 border-primary/30 corner-glow" />
+        
         {/* Terminal command lines in background */}
         <div className="absolute top-32 left-8 font-mono text-xs text-primary/20 pointer-events-none space-y-2">
           <div className="animate-terminal-line">$ sudo access --grant</div>
           <div className="animate-terminal-line" style={{ animationDelay: "1s" }}>root@system:~$ ./init.sh</div>
           <div className="animate-terminal-line" style={{ animationDelay: "2s" }}>[INFO] System initialized...</div>
+          <div className="animate-terminal-line" style={{ animationDelay: "3s" }}>[SUCCESS] Connection established</div>
         </div>
         <div className="absolute bottom-32 right-8 font-mono text-xs text-primary/20 pointer-events-none space-y-2 text-right">
           <div className="animate-terminal-line">$ npm run deploy</div>
           <div className="animate-terminal-line" style={{ animationDelay: "1.5s" }}>Building for production...</div>
           <div className="animate-terminal-line" style={{ animationDelay: "3s" }}>✓ Compiled successfully</div>
+          <div className="animate-terminal-line" style={{ animationDelay: "4s" }}>✓ Ready for launch</div>
         </div>
+        
         {/* Hex code display */}
         <div className="absolute top-1/2 -translate-y-1/2 left-4 font-mono text-[8px] text-primary/10 pointer-events-none leading-tight">
           <div>0x00FF9D</div>
           <div>0x050505</div>
           <div>0xFFFFFF</div>
           <div>0x1A1A1A</div>
+          <div>0x00FFFF</div>
+          <div>0xFF00FF</div>
+        </div>
+        
+        {/* Floating ASCII Art */}
+        <div className="absolute top-1/2 -translate-y-1/2 right-4 font-mono text-[8px] text-primary/10 pointer-events-none leading-tight hidden lg:block">
+          <pre>{`
+  ┌──────────┐
+  │ SYSTEM   │
+  │ STATUS:  │
+  │ ONLINE   │
+  └──────────┘
+          `}</pre>
         </div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center text-center max-w-4xl">
         {/* Status Badge */}
-        <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded border border-primary/40 bg-primary/10 backdrop-blur-sm shadow-[0_0_10px_rgba(0,255,157,0.3)] relative overflow-hidden">
+        <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded border border-primary/40 bg-primary/10 backdrop-blur-sm shadow-[0_0_10px_rgba(0,255,157,0.3)] relative overflow-hidden pulse-ring">
           <div className="absolute inset-0 bg-primary/5 animate-shimmer" />
           <span className="relative flex h-2 w-2 z-10">
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary shadow-[0_0_8px_rgba(0,255,157,0.8)] animate-pulse" />
@@ -128,8 +152,8 @@ export default function Home() {
           <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-scan" />
         </div>
 
-        {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight min-h-[80px] md:min-h-[120px] lg:min-h-[150px] flex items-center justify-center text-glow">
+        {/* Main Title with Glitch Effect */}
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight min-h-[80px] md:min-h-[120px] lg:min-h-[150px] flex items-center justify-center text-glow rgb-shift glitch-intense" data-text={nameTyping.displayedText}>
           {nameTyping.displayedText}
           <span className="text-primary">
             {nameTyping.displayedText.includes("Rahul") && nameTyping.isComplete
@@ -140,7 +164,7 @@ export default function Home() {
         </h1>
 
         <div className="h-8 md:h-10 mb-10 flex items-center justify-center min-h-[32px] md:min-h-[40px]">
-          <div className="font-mono text-primary text-lg md:text-2xl font-bold px-4 py-2 text-glow">
+          <div className="font-mono text-primary text-lg md:text-2xl font-bold px-4 py-2 text-glow holographic rounded">
             {roleTyping.displayedText}
             {!roleTyping.isComplete && <span className="animate-blink">|</span>}
           </div>
@@ -152,11 +176,14 @@ export default function Home() {
           {!descTyping.isComplete && <span className="animate-blink text-primary">|</span>}
         </p>
 
+        {/* Loading Bar */}
+        <div className="w-full max-w-md mb-8 loading-bar" />
+
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-5">
           <Link
             href="/projects"
-            className="group relative flex items-center justify-center gap-3 h-12 px-8 rounded bg-primary text-background font-bold text-base overflow-hidden transition-all duration-300 box-glow hover:scale-105 font-mono"
+            className="group relative flex items-center justify-center gap-3 h-12 px-8 rounded bg-primary text-background font-bold text-base overflow-hidden transition-all duration-300 box-glow hover:scale-105 font-mono neon-border"
           >
             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 skew-y-12" />
             <span className="relative z-10">$ ./view_projects</span>
@@ -171,13 +198,25 @@ export default function Home() {
           </Link>
           <Link
             href="/contact"
-            className="group relative flex items-center justify-center gap-3 h-12 px-8 rounded border-2 border-primary/60 text-white font-bold text-base overflow-hidden transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(0,255,157,0.3)] font-mono"
+            className="group relative flex items-center justify-center gap-3 h-12 px-8 rounded border-2 border-primary/60 text-white font-bold text-base overflow-hidden transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(0,255,157,0.3)] font-mono neon-border"
           >
             <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
               <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <span>$ ./contact</span>
           </Link>
+        </div>
+
+        {/* Bottom Terminal Output */}
+        <div className="mt-16 font-mono text-[10px] text-gray-600 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-muted/30 border border-primary/10 rounded">
+            <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+            <span>READY</span>
+            <span className="text-primary/50">|</span>
+            <span>v1.0.0</span>
+            <span className="text-primary/50">|</span>
+            <span>COPYRIGHT © 2026</span>
+          </div>
         </div>
       </div>
     </main>
