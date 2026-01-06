@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Rahul Ranjan - Full Stack Developer",
   description:
     "Building immersive web experiences and robust backend systems with a focus on security and performance.",
+  verification: {
+    google: "feo7mDhCWPO62HEglzem-ETMlVKsK_Ib8Z76ydT2Dy8",
+  },
   icons: {
     icon: [
       {
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
