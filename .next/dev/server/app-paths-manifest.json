@@ -1,6 +1,6 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/about/page": "app/about/page.js",
-  "/api/github-contributions/route": "app/api/github-contributions/route.js",
   "/contact/page": "app/contact/page.js",
   "/education/page": "app/education/page.js",
   "/experience/page": "app/experience/page.js",

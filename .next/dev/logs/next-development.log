@@ -1,22 +1,49 @@
-[00:00:02.577] Server  LOG      ✓ Ready in 2.4s
-[00:00:11.340] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:11.340] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:11.340] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554324724}
-[00:00:14.955] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:00:14.955] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about/ color: rgb(120, 120, 120) color: inherit {"dp":"/about/","o":"http://localhost:3000/about/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554328339}
-[00:00:27.598] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/projects/ color: rgb(120, 120, 120) color: inherit {"dp":"/projects/","o":"http://localhost:3000/projects/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554340983}
-[00:00:33.647] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/experience/ color: rgb(120, 120, 120) color: inherit {"dp":"/experience/","o":"http://localhost:3000/experience/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554347033}
-[00:00:34.994] Server  ERROR    ⨯ Error: export const dynamic = "force-static"/export const revalidate not configured on route "/api/github-contributions" with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
-[00:00:35.597] Browser ERROR   Error fetching contributions: {}
-[00:00:38.269] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/education/ color: rgb(120, 120, 120) color: inherit {"dp":"/education/","o":"http://localhost:3000/education/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554351653}
-[00:01:15.389] Server  LOG        Reload env: .env.local
-[00:02:10.101] Server  LOG        Reload env: .env.local
-[00:02:32.608] Server  LOG        Reload env: .env.local
-[00:02:36.417] Server  LOG        Reload env: .env.local
-[00:03:41.913] Server  LOG        Reload env: .env.local
-[00:03:45.143] Server  LOG        Reload env: .env.local
-[00:04:01.912] Server  LOG        Reload env: .env.local
-[00:04:08.605] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:04:08.605] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/contact/","route":"/contact/"}
-[00:04:08.605] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact/ color: rgb(120, 120, 120) color: inherit {"dp":"/contact/","o":"http://localhost:3000/contact/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767554561990}
-[00:04:09.593] Browser LOG     EmailJS initialized successfully with public key: MzH2luE9Ps...
+[00:00:00.591] Server  LOG      ✓ Ready in 365ms
+[00:00:07.735] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:07.735] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:07.735] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767724761809}
+[00:00:17.023] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:17.023] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about/ color: rgb(120, 120, 120) color: inherit {"dp":"/about/","o":"http://localhost:3000/about/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767724771096}
+[00:02:24.044] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:24.170] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:24.170] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:02:24.170] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767724898244}
+[00:02:34.934] Server  LOG      ✓ Compiled in 73ms
+[00:02:35.032] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:02:35.032] Browser ERROR   Image is missing required "src" property: <img>
+[00:02:37.225] Server  LOG      ✓ Compiled in 61ms
+[00:02:38.915] Server  LOG      ✓ Compiled in 48ms
+[00:02:41.460] Server  LOG      ✓ Compiled in 47ms
+[00:03:39.232] Server  LOG      ✓ Compiled in 56ms
+[00:03:39.282] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[00:03:39.282] Browser ERROR   Image is missing required "src" property: <img>
+[00:03:43.522] Server  LOG      ✓ Compiled in 45ms
+[00:03:45.132] Server  LOG      ✓ Compiled in 48ms
+[00:03:49.777] Server  LOG      ✓ Compiled in 47ms
+[00:03:58.449] Server  LOG      ✓ Compiled in 35ms
+[00:04:04.912] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:04.912] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/about/","route":"/about/"}
+[00:04:04.912] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about/ color: rgb(120, 120, 120) color: inherit {"dp":"/about/","o":"http://localhost:3000/about/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767724998988}
+[00:04:07.276] Browser WARN    Image with src "/rahulIMG.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:06:34.934] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:06:34.934] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725149009}
+[00:06:51.511] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about/ color: rgb(120, 120, 120) color: inherit {"dp":"/about/","o":"http://localhost:3000/about/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725165583}
+[00:07:19.032] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/projects/ color: rgb(120, 120, 120) color: inherit {"dp":"/projects/","o":"http://localhost:3000/projects/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725193108}
+[00:07:24.381] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about/ color: rgb(120, 120, 120) color: inherit {"dp":"/about/","o":"http://localhost:3000/about/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725198458}
+[00:10:49.434] Server  LOG      ✓ Compiled in 158ms
+[00:11:17.598] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:11:17.598] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/about/","route":"/about/"}
+[00:11:17.598] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/about/ color: rgb(120, 120, 120) color: inherit {"dp":"/about/","o":"http://localhost:3000/about/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725431678}
+[00:11:39.180] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:11:39.180] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725453259}
+[00:11:46.058] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact/ color: rgb(120, 120, 120) color: inherit {"dp":"/contact/","o":"http://localhost:3000/contact/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725460137}
+[00:11:47.059] Browser LOG     EmailJS initialized successfully with public key: MzH2luE9Ps...
+[00:11:51.056] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/education/ color: rgb(120, 120, 120) color: inherit {"dp":"/education/","o":"http://localhost:3000/education/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725465134}
+[00:12:03.129] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/projects/ color: rgb(120, 120, 120) color: inherit {"dp":"/projects/","o":"http://localhost:3000/projects/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725477208}
+[00:12:23.538] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:23.538] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/projects/","route":"/projects/"}
+[00:12:23.538] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/projects/ color: rgb(120, 120, 120) color: inherit {"dp":"/projects/","o":"http://localhost:3000/projects/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725497619}
+[00:12:47.886] Server  LOG      ✓ Compiled in 49ms
+[00:12:50.793] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:12:50.793] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/experience/ color: rgb(120, 120, 120) color: inherit {"dp":"/experience/","o":"http://localhost:3000/experience/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1767725524871}

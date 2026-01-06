@@ -148,7 +148,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lu
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.454.0_react@19.2.0/node_modules/lucide-react/dist/esm/icons/code.js [app-client] (ecmascript) <export default as Code>");
 ;
 const IMAGES = {
-    profile: "/developer-profile-photo-cyber-aesthetic.jpg",
+    profile: "/rahulIMG.png",
     projects: {
         cybersecurity: "/cybersecurity-scan-interface.jpg",
         crypto: "/crypto-dashboard.jpg",
@@ -701,15 +701,226 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$typewriter$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/use-typewriter.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/constants/data.ts [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 ;
 ;
 ;
-function About() {
+// Matrix Rain Profile Image Component
+function MatrixProfileImage({ src, alt }) {
     _s();
+    const [isHovered, setIsHovered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [loadProgress, setLoadProgress] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [isRevealed, setIsRevealed] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const canvasRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const animationRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const progressRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const startMatrixRain = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "MatrixProfileImage.useCallback[startMatrixRain]": ()=>{
+            const canvas = canvasRef.current;
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+            canvas.width = 224;
+            canvas.height = 224;
+            const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
+            const fontSize = 10;
+            const columns = canvas.width / fontSize;
+            const drops = Array(Math.floor(columns)).fill(1);
+            const draw = {
+                "MatrixProfileImage.useCallback[startMatrixRain].draw": ()=>{
+                    ctx.fillStyle = 'rgba(5, 5, 5, 0.1)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = '#00ff9d';
+                    ctx.font = `${fontSize}px monospace`;
+                    for(let i = 0; i < drops.length; i++){
+                        const char = chars[Math.floor(Math.random() * chars.length)];
+                        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+                        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                            drops[i] = 0;
+                        }
+                        drops[i]++;
+                    }
+                    animationRef.current = requestAnimationFrame(draw);
+                }
+            }["MatrixProfileImage.useCallback[startMatrixRain].draw"];
+            draw();
+        }
+    }["MatrixProfileImage.useCallback[startMatrixRain]"], []);
+    const stopMatrixRain = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "MatrixProfileImage.useCallback[stopMatrixRain]": ()=>{
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+                animationRef.current = null;
+            }
+        }
+    }["MatrixProfileImage.useCallback[stopMatrixRain]"], []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "MatrixProfileImage.useEffect": ()=>{
+            if (isHovered && !isRevealed) {
+                startMatrixRain();
+                setLoadProgress(0);
+                progressRef.current = setInterval({
+                    "MatrixProfileImage.useEffect": ()=>{
+                        setLoadProgress({
+                            "MatrixProfileImage.useEffect": (prev)=>{
+                                if (prev >= 100) {
+                                    if (progressRef.current) clearInterval(progressRef.current);
+                                    setIsRevealed(true);
+                                    return 100;
+                                }
+                                return prev + 4;
+                            }
+                        }["MatrixProfileImage.useEffect"]);
+                    }
+                }["MatrixProfileImage.useEffect"], 100);
+            } else if (!isHovered) {
+                stopMatrixRain();
+                if (progressRef.current) clearInterval(progressRef.current);
+                setLoadProgress(0);
+                setIsRevealed(false);
+            }
+            return ({
+                "MatrixProfileImage.useEffect": ()=>{
+                    stopMatrixRain();
+                    if (progressRef.current) clearInterval(progressRef.current);
+                }
+            })["MatrixProfileImage.useEffect"];
+        }
+    }["MatrixProfileImage.useEffect"], [
+        isHovered,
+        isRevealed,
+        startMatrixRain,
+        stopMatrixRain
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "MatrixProfileImage.useEffect": ()=>{
+            if (isRevealed) {
+                const timeout = setTimeout({
+                    "MatrixProfileImage.useEffect.timeout": ()=>{
+                        stopMatrixRain();
+                    }
+                }["MatrixProfileImage.useEffect.timeout"], 500);
+                return ({
+                    "MatrixProfileImage.useEffect": ()=>clearTimeout(timeout)
+                })["MatrixProfileImage.useEffect"];
+            }
+        }
+    }["MatrixProfileImage.useEffect"], [
+        isRevealed,
+        stopMatrixRain
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "relative w-56 h-56 mb-6 rounded-lg overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 shadow-[0_0_20px_rgba(0,255,157,0.2)] cursor-pointer",
+        onMouseEnter: ()=>setIsHovered(true),
+        onMouseLeave: ()=>setIsHovered(false),
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                src: src,
+                alt: alt,
+                fill: true,
+                className: `object-cover transition-all duration-500 ${isRevealed ? 'scale-105' : 'scale-100'}`
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 106,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("canvas", {
+                ref: canvasRef,
+                className: `absolute inset-0 z-20 transition-opacity duration-500 ${isHovered && !isRevealed ? 'opacity-90' : 'opacity-0'}`
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 113,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-black z-10 transition-all duration-100",
+                style: {
+                    clipPath: isHovered ? `inset(${100 - loadProgress}% 0 0 0)` : 'inset(100% 0 0 0)',
+                    opacity: isHovered ? 0 : 1
+                }
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 120,
+                columnNumber: 7
+            }, this),
+            isHovered && !isRevealed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-2 left-2 z-30 font-mono text-xs text-primary bg-black/70 px-2 py-1 rounded",
+                children: [
+                    "LOADING... ",
+                    loadProgress,
+                    "%"
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 131,
+                columnNumber: 9
+            }, this),
+            isRevealed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-2 left-2 z-30 font-mono text-xs text-primary bg-black/70 px-2 py-1 rounded flex items-center gap-2 animate-fade-in",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "w-2 h-2 bg-primary rounded-full animate-pulse"
+                    }, void 0, false, {
+                        fileName: "[project]/app/about/page.tsx",
+                        lineNumber: 138,
+                        columnNumber: 11
+                    }, this),
+                    "LOADED"
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 137,
+                columnNumber: 9
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent z-5 pointer-events-none"
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 143,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute top-1 left-1 w-4 h-4 border-t-2 border-l-2 border-primary/50 z-30"
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 145,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute top-1 right-1 w-4 h-4 border-t-2 border-r-2 border-primary/50 z-30"
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 146,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-1 left-1 w-4 h-4 border-b-2 border-l-2 border-primary/50 z-30"
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 147,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute bottom-1 right-1 w-4 h-4 border-b-2 border-r-2 border-primary/50 z-30"
+            }, void 0, false, {
+                fileName: "[project]/app/about/page.tsx",
+                lineNumber: 148,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/app/about/page.tsx",
+        lineNumber: 101,
+        columnNumber: 5
+    }, this);
+}
+_s(MatrixProfileImage, "yYJQapUyi3DrBliA3qMQoyas9bg=");
+_c = MatrixProfileImage;
+function About() {
+    _s1();
     const [showContent, setShowContent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const headingTyping = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$typewriter$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTypeWriter"])(__TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PAGE_HEADINGS"].about.title, 40, 0);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
@@ -735,14 +946,14 @@ function About() {
                 className: "absolute inset-0 cyber-grid opacity-20 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/app/about/page.tsx",
-                lineNumber: 25,
+                lineNumber: 169,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 binary-rain opacity-5 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/app/about/page.tsx",
-                lineNumber: 26,
+                lineNumber: 170,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -761,7 +972,7 @@ function About() {
                                                 className: "w-2 h-2 bg-primary rounded-full animate-pulse"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 33,
+                                                lineNumber: 177,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -769,26 +980,26 @@ function About() {
                                                 children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].systemInfo
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 34,
+                                                lineNumber: 178,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/page.tsx",
-                                        lineNumber: 32,
+                                        lineNumber: 176,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent"
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/page.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 180,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/page.tsx",
-                                lineNumber: 31,
+                                lineNumber: 175,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -805,7 +1016,7 @@ function About() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 44,
+                                                lineNumber: 188,
                                                 columnNumber: 21
                                             }, this),
                                             !headingTyping.isComplete && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -813,7 +1024,7 @@ function About() {
                                                 children: "|"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 45,
+                                                lineNumber: 189,
                                                 columnNumber: 51
                                             }, this)
                                         ]
@@ -825,7 +1036,7 @@ function About() {
                                                 children: "|"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 50,
+                                                lineNumber: 194,
                                                 columnNumber: 51
                                             }, this)
                                         ]
@@ -835,12 +1046,12 @@ function About() {
                                     children: "|"
                                 }, void 0, false, {
                                     fileName: "[project]/app/about/page.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 199,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/about/page.tsx",
-                                lineNumber: 38,
+                                lineNumber: 182,
                                 columnNumber: 11
                             }, this),
                             showContent && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -848,13 +1059,13 @@ function About() {
                                 children: 'root@system:~$ cat intro.md | grep -i "rahul"'
                             }, void 0, false, {
                                 fileName: "[project]/app/about/page.tsx",
-                                lineNumber: 59,
+                                lineNumber: 203,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/about/page.tsx",
-                        lineNumber: 30,
+                        lineNumber: 174,
                         columnNumber: 9
                     }, this),
                     showContent && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -867,44 +1078,12 @@ function About() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "lg:col-span-2 flex flex-col items-center lg:items-start",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-56 h-56 mb-6 rounded-lg overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 group shadow-[0_0_20px_rgba(0,255,157,0.2)]",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent z-10"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 75,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 76,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                            src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].profileImage,
-                                                            alt: "Rahul Profile",
-                                                            fill: true,
-                                                            className: "object-cover group-hover:scale-110 transition-transform duration-500 z-0"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 77,
-                                                            columnNumber: 19
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent opacity-0 group-hover:opacity-100 animate-scan z-30 pointer-events-none"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 84,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(MatrixProfileImage, {
+                                                    src: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].profileImage,
+                                                    alt: "Rahul Profile"
+                                                }, void 0, false, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 74,
+                                                    lineNumber: 218,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -917,7 +1096,7 @@ function About() {
                                                                     className: "absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 90,
+                                                                    lineNumber: 226,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -928,7 +1107,7 @@ function About() {
                                                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].stats.experience.value
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/about/page.tsx",
-                                                                            lineNumber: 92,
+                                                                            lineNumber: 228,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -936,19 +1115,19 @@ function About() {
                                                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].stats.experience.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/about/page.tsx",
-                                                                            lineNumber: 95,
+                                                                            lineNumber: 231,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 91,
+                                                                    lineNumber: 227,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 89,
+                                                            lineNumber: 225,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -958,7 +1137,7 @@ function About() {
                                                                     className: "absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 99,
+                                                                    lineNumber: 235,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -969,7 +1148,7 @@ function About() {
                                                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].stats.projects.value
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/about/page.tsx",
-                                                                            lineNumber: 101,
+                                                                            lineNumber: 237,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -977,25 +1156,25 @@ function About() {
                                                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].stats.projects.label
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/about/page.tsx",
-                                                                            lineNumber: 104,
+                                                                            lineNumber: 240,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 100,
+                                                                    lineNumber: 236,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 98,
+                                                            lineNumber: 234,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 88,
+                                                    lineNumber: 224,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1009,7 +1188,7 @@ function About() {
                                                                     children: "$"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 112,
+                                                                    lineNumber: 248,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1017,13 +1196,13 @@ function About() {
                                                                     children: "whoami"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 113,
+                                                                    lineNumber: 249,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 111,
+                                                            lineNumber: 247,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1031,7 +1210,7 @@ function About() {
                                                             children: "rahul@developer"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 115,
+                                                            lineNumber: 251,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1042,7 +1221,7 @@ function About() {
                                                                     children: "$"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 117,
+                                                                    lineNumber: 253,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1050,13 +1229,13 @@ function About() {
                                                                     children: "pwd"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 118,
+                                                                    lineNumber: 254,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 116,
+                                                            lineNumber: 252,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1064,19 +1243,19 @@ function About() {
                                                             children: "~/portfolio/about"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 120,
+                                                            lineNumber: 256,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 246,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/page.tsx",
-                                            lineNumber: 72,
+                                            lineNumber: 216,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1090,14 +1269,14 @@ function About() {
                                                             children: "$"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 127,
+                                                            lineNumber: 263,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: "cat intro.md"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 128,
+                                                            lineNumber: 264,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1105,7 +1284,7 @@ function About() {
                                                             children: "|"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 129,
+                                                            lineNumber: 265,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1113,13 +1292,13 @@ function About() {
                                                             children: 'grep -i "developer"'
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 266,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 262,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1127,7 +1306,7 @@ function About() {
                                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].bio.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 269,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1142,17 +1321,17 @@ function About() {
                                                                 children: paragraph
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/page.tsx",
-                                                                lineNumber: 140,
+                                                                lineNumber: 276,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, idx, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 139,
+                                                            lineNumber: 275,
                                                             columnNumber: 21
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 137,
+                                                    lineNumber: 273,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1166,20 +1345,20 @@ function About() {
                                                                     children: "Known_Vulnerabilities (SKILLS)"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 150,
+                                                                    lineNumber: 286,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 153,
+                                                                    lineNumber: 289,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 149,
+                                                            lineNumber: 285,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1192,18 +1371,18 @@ function About() {
                                                                     children: skill
                                                                 }, skill, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 157,
+                                                                    lineNumber: 293,
                                                                     columnNumber: 23
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 155,
+                                                            lineNumber: 291,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 148,
+                                                    lineNumber: 284,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1217,7 +1396,7 @@ function About() {
                                                                     className: "absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 174,
+                                                                    lineNumber: 310,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1228,12 +1407,12 @@ function About() {
                                                                         d: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/about/page.tsx",
-                                                                        lineNumber: 176,
+                                                                        lineNumber: 312,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 175,
+                                                                    lineNumber: 311,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1241,13 +1420,13 @@ function About() {
                                                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].cta.downloadCV.text
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 178,
+                                                                    lineNumber: 314,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 170,
+                                                            lineNumber: 306,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1258,7 +1437,7 @@ function About() {
                                                                     className: "absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 184,
+                                                                    lineNumber: 320,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1273,12 +1452,12 @@ function About() {
                                                                         d: "M10 20l4-16m4 4l4 4m0 6V4m0 0L8 4m0 0l4 4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/about/page.tsx",
-                                                                        lineNumber: 186,
+                                                                        lineNumber: 322,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 185,
+                                                                    lineNumber: 321,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1286,36 +1465,36 @@ function About() {
                                                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ABOUT_DATA"].cta.viewSource.text
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 193,
+                                                                    lineNumber: 329,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/about/page.tsx",
-                                                            lineNumber: 180,
+                                                            lineNumber: 316,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/about/page.tsx",
-                                                    lineNumber: 169,
+                                                    lineNumber: 305,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/about/page.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 261,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/about/page.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 214,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/about/page.tsx",
-                                lineNumber: 69,
+                                lineNumber: 213,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1332,14 +1511,14 @@ function About() {
                                                 children: "// Social_Uplink"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 339,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "h-px flex-1 bg-gradient-to-r from-primary/30 to-transparent"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 204,
+                                                lineNumber: 340,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1347,13 +1526,13 @@ function About() {
                                                 children: "[3 connections]"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 205,
+                                                lineNumber: 341,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/about/page.tsx",
-                                        lineNumber: 202,
+                                        lineNumber: 338,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1371,7 +1550,7 @@ function About() {
                                                         className: "absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/about/page.tsx",
-                                                        lineNumber: 217,
+                                                        lineNumber: 353,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1383,12 +1562,12 @@ function About() {
                                                                     className: "w-10 h-10 group-hover:scale-110 transition-transform"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/about/page.tsx",
-                                                                    lineNumber: 220,
+                                                                    lineNumber: 356,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/page.tsx",
-                                                                lineNumber: 219,
+                                                                lineNumber: 355,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -1396,7 +1575,7 @@ function About() {
                                                                 children: social.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/page.tsx",
-                                                                lineNumber: 222,
+                                                                lineNumber: 358,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1404,7 +1583,7 @@ function About() {
                                                                 children: social.desc
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/page.tsx",
-                                                                lineNumber: 225,
+                                                                lineNumber: 361,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1412,30 +1591,30 @@ function About() {
                                                                 children: "→ connect"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/about/page.tsx",
-                                                                lineNumber: 228,
+                                                                lineNumber: 364,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/about/page.tsx",
-                                                        lineNumber: 218,
+                                                        lineNumber: 354,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, i, true, {
                                                 fileName: "[project]/app/about/page.tsx",
-                                                lineNumber: 209,
+                                                lineNumber: 345,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/app/about/page.tsx",
-                                        lineNumber: 207,
+                                        lineNumber: 343,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/about/page.tsx",
-                                lineNumber: 201,
+                                lineNumber: 337,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -1443,24 +1622,25 @@ function About() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/about/page.tsx",
-                lineNumber: 28,
+                lineNumber: 172,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/about/page.tsx",
-        lineNumber: 23,
+        lineNumber: 167,
         columnNumber: 5
     }, this);
 }
-_s(About, "cOjHVpQXndNx5eo8hX94vyLtzQ8=", false, function() {
+_s1(About, "cOjHVpQXndNx5eo8hX94vyLtzQ8=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$typewriter$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTypeWriter"]
     ];
 });
-_c = About;
-var _c;
-__turbopack_context__.k.register(_c, "About");
+_c1 = About;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "MatrixProfileImage");
+__turbopack_context__.k.register(_c1, "About");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

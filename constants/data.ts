@@ -87,7 +87,7 @@ export interface Stats {
 
 // ============ IMAGE URLS ============
 export const IMAGES = {
-  profile: "/developer-profile-photo-cyber-aesthetic.jpg",
+  profile: "/rahulIMG.png",
   projects: {
     cybersecurity: "/cybersecurity-scan-interface.jpg",
     crypto: "/crypto-dashboard.jpg",
@@ -126,7 +126,7 @@ export const EXPERIENCES: Experience[] = [
       "Focused on quality assurance and automation testing.",
     ],
     skills: ["Testing", "Automation", "QA"],
-    isActive: true,
+    isActive: false,
   },
   {
     title: "Full Stack Developer",
