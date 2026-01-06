@@ -148,7 +148,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lu
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.454.0_react@19.2.0/node_modules/lucide-react/dist/esm/icons/code.js [app-client] (ecmascript) <export default as Code>");
 ;
 const IMAGES = {
-    profile: "/rahulIMG.png",
+    profile: "/developer-profile-photo-cyber-aesthetic.jpg",
     projects: {
         cybersecurity: "/cybersecurity-scan-interface.jpg",
         crypto: "/crypto-dashboard.jpg",
@@ -583,11 +583,11 @@ const ABOUT_DATA = {
     systemInfo: "< System.Rahul > v1.0.0",
     stats: {
         experience: {
-            value: "1+",
+            value: "5+",
             label: "Years Exp"
         },
         projects: {
-            value: "20+",
+            value: "42",
             label: "Projects"
         }
     },
@@ -611,7 +611,7 @@ const ABOUT_DATA = {
 };
 const HOME_DATA = {
     name: "Hi, I'm Rahul",
-    role: "> Software Developer | Problem Solver_",
+    role: "> Full Stack Developer | Problem Solver_",
     description: "Blending tech and design to solve real problems. Building scalable web apps, automating workflows, and driving digital innovation. Let's turn lines of code into impactful solutions.",
     typingSpeed: {
         name: 50,
@@ -630,7 +630,7 @@ const STATS = {
         label: "years"
     },
     projects: {
-        count: "15+",
+        count: "7+",
         label: "deployed"
     },
     contributions: {
@@ -732,69 +732,35 @@ function Experience() {
     ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Experience.useEffect": ()=>{
-            // Fetch GitHub contributions directly from external API (no server-side API route needed)
+            // Fetch GitHub contributions
             const fetchContributions = {
                 "Experience.useEffect.fetchContributions": async ()=>{
                     setLoadingContributions(true);
                     try {
-                        // Calculate date range for the selected month
-                        const startDate = new Date(selectedYear, selectedMonth - 1, 1);
-                        const endDate = new Date(selectedYear, selectedMonth, 0);
-                        const startDateString = startDate.toISOString().split('T')[0];
-                        const endDateString = endDate.toISOString().split('T')[0];
-                        // Fetch directly from GitHub Contributions API
-                        const apiUrl = `https://github-contributions-api.deno.dev/${__TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["GITHUB_USERNAME"]}.json?flat=true&from=${startDateString}&to=${endDateString}`;
-                        const response = await fetch(apiUrl, {
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
+                        const response = await fetch(`/api/github-contributions?year=${selectedYear}&month=${selectedMonth}`);
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
                         }
-                        const apiData = await response.json();
-                        let contributions = [];
-                        let totalContributions = 0;
-                        if (apiData.contributions && Array.isArray(apiData.contributions)) {
-                            // Map the API response to our format
-                            contributions = apiData.contributions.map({
-                                "Experience.useEffect.fetchContributions": (contrib)=>({
-                                        date: contrib.date || '',
-                                        count: contrib.contributionCount || 0
-                                    })
-                            }["Experience.useEffect.fetchContributions"]).filter({
-                                "Experience.useEffect.fetchContributions": (c)=>c.date && c.date.match(/^\d{4}-\d{2}-\d{2}$/)
-                            }["Experience.useEffect.fetchContributions"]);
-                            totalContributions = apiData.totalContributions || contributions.reduce({
-                                "Experience.useEffect.fetchContributions": (sum, contrib)=>sum + contrib.count
-                            }["Experience.useEffect.fetchContributions"], 0);
-                        } else if (Array.isArray(apiData)) {
-                            // Fallback: if API returns array directly (with flat=true)
-                            contributions = apiData.map({
-                                "Experience.useEffect.fetchContributions": (contrib)=>({
-                                        date: contrib.date || '',
-                                        count: contrib.contributionCount || contrib.count || 0
-                                    })
-                            }["Experience.useEffect.fetchContributions"]).filter({
-                                "Experience.useEffect.fetchContributions": (c)=>c.date && c.date.match(/^\d{4}-\d{2}-\d{2}$/)
-                            }["Experience.useEffect.fetchContributions"]);
-                            totalContributions = contributions.reduce({
-                                "Experience.useEffect.fetchContributions": (sum, contrib)=>sum + contrib.count
-                            }["Experience.useEffect.fetchContributions"], 0);
+                        const data = await response.json();
+                        console.log('Fetched contributions data:', {
+                            contributionsCount: data.contributions?.length || 0,
+                            total: data.total,
+                            month: data.month,
+                            year: data.year,
+                            sample: data.contributions?.slice(0, 3)
+                        });
+                        if (data.contributions && Array.isArray(data.contributions)) {
+                            setContributions(data.contributions);
+                            setTotalContributions(data.total || 0);
+                            console.log(`Set ${data.contributions.length} contributions, total: ${data.total}`);
+                        } else {
+                            console.warn('No contributions found or invalid format:', data);
+                            setContributions([]);
+                            setTotalContributions(0);
                         }
-                        // Sort by date to ensure correct order
-                        contributions.sort({
-                            "Experience.useEffect.fetchContributions": (a, b)=>{
-                                if (!a.date || !b.date) return 0;
-                                return a.date.localeCompare(b.date);
-                            }
-                        }["Experience.useEffect.fetchContributions"]);
-                        setContributions(contributions);
-                        setTotalContributions(totalContributions);
                     } catch (error) {
                         console.error('Error fetching contributions:', error);
                         setContributions([]);
-                        setTotalContributions(0);
                     } finally{
                         setLoadingContributions(false);
                     }
@@ -816,7 +782,7 @@ function Experience() {
                 className: "absolute inset-0 cyber-grid opacity-20 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/app/experience/page.tsx",
-                lineNumber: 103,
+                lineNumber: 75,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -832,12 +798,12 @@ function Experience() {
                                     children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PAGE_HEADINGS"].experience.prefix
                                 }, void 0, false, {
                                     fileName: "[project]/app/experience/page.tsx",
-                                    lineNumber: 109,
+                                    lineNumber: 81,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/experience/page.tsx",
-                                lineNumber: 108,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -851,7 +817,7 @@ function Experience() {
                                                 children: "experience.exe"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/experience/page.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 89,
                                                 columnNumber: 21
                                             }, this),
                                             headingTyping.displayedText.split("experience.exe")[1],
@@ -860,7 +826,7 @@ function Experience() {
                                                 children: "|"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/experience/page.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 91,
                                                 columnNumber: 51
                                             }, this)
                                         ]
@@ -872,7 +838,7 @@ function Experience() {
                                                 children: "|"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/experience/page.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 96,
                                                 columnNumber: 51
                                             }, this)
                                         ]
@@ -882,12 +848,12 @@ function Experience() {
                                     children: "|"
                                 }, void 0, false, {
                                     fileName: "[project]/app/experience/page.tsx",
-                                    lineNumber: 129,
+                                    lineNumber: 101,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/experience/page.tsx",
-                                lineNumber: 111,
+                                lineNumber: 83,
                                 columnNumber: 11
                             }, this),
                             showContent && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -895,13 +861,13 @@ function Experience() {
                                 children: "Initializing System Logs: Retrieving career history data blocks... Status: Loaded successfully."
                             }, void 0, false, {
                                 fileName: "[project]/app/experience/page.tsx",
-                                lineNumber: 133,
+                                lineNumber: 105,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/experience/page.tsx",
-                        lineNumber: 107,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     showContent && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -916,7 +882,7 @@ function Experience() {
                                             className: "absolute left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent z-0"
                                         }, void 0, false, {
                                             fileName: "[project]/app/experience/page.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 117,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -938,17 +904,17 @@ function Experience() {
                                                                         className: `rounded-full transition-all ${exp.isActive ? "w-3 h-3 bg-primary shadow-[0_0_8px_rgba(0,255,157,0.8)]" : "w-2.5 h-2.5 bg-primary/60"}`
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                        lineNumber: 168,
+                                                                        lineNumber: 140,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 159,
+                                                                    lineNumber: 131,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                lineNumber: 157,
+                                                                lineNumber: 129,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -964,7 +930,7 @@ function Experience() {
                                                                                         children: exp.title
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                                        lineNumber: 180,
+                                                                                        lineNumber: 152,
                                                                                         columnNumber: 29
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -977,13 +943,13 @@ function Experience() {
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                                        lineNumber: 181,
+                                                                                        lineNumber: 153,
                                                                                         columnNumber: 29
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                lineNumber: 179,
+                                                                                lineNumber: 151,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             exp.isActive && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -991,13 +957,13 @@ function Experience() {
                                                                                 children: "● ACTIVE_PROCESS"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                lineNumber: 186,
+                                                                                lineNumber: 158,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                        lineNumber: 178,
+                                                                        lineNumber: 150,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1005,7 +971,7 @@ function Experience() {
                                                                         children: exp.period
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                        lineNumber: 192,
+                                                                        lineNumber: 164,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     expandedIndex === idx && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1021,25 +987,25 @@ function Experience() {
                                                                                                 children: "›"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                                lineNumber: 200,
+                                                                                                lineNumber: 172,
                                                                                                 columnNumber: 35
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                                 children: desc
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                                lineNumber: 201,
+                                                                                                lineNumber: 173,
                                                                                                 columnNumber: 35
                                                                                             }, this)
                                                                                         ]
                                                                                     }, i, true, {
                                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                                        lineNumber: 199,
+                                                                                        lineNumber: 171,
                                                                                         columnNumber: 33
                                                                                     }, this))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                lineNumber: 197,
+                                                                                lineNumber: 169,
                                                                                 columnNumber: 29
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1049,18 +1015,18 @@ function Experience() {
                                                                                         children: skill
                                                                                     }, i, false, {
                                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                                        lineNumber: 209,
+                                                                                        lineNumber: 181,
                                                                                         columnNumber: 33
                                                                                     }, this))
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                lineNumber: 207,
+                                                                                lineNumber: 179,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                        lineNumber: 196,
+                                                                        lineNumber: 168,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1068,40 +1034,40 @@ function Experience() {
                                                                         children: expandedIndex === idx ? "$ click to collapse" : "$ click to expand"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                        lineNumber: 220,
+                                                                        lineNumber: 192,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                lineNumber: 177,
+                                                                lineNumber: 149,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/experience/page.tsx",
-                                                        lineNumber: 156,
+                                                        lineNumber: 128,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, idx, false, {
                                                     fileName: "[project]/app/experience/page.tsx",
-                                                    lineNumber: 150,
+                                                    lineNumber: 122,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/app/experience/page.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 120,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/experience/page.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 115,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/experience/page.tsx",
-                                lineNumber: 142,
+                                lineNumber: 114,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1116,14 +1082,14 @@ function Experience() {
                                                     className: "w-2 h-2 bg-primary rounded-full animate-pulse"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/experience/page.tsx",
-                                                    lineNumber: 235,
+                                                    lineNumber: 207,
                                                     columnNumber: 17
                                                 }, this),
                                                 "System Stats"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/experience/page.tsx",
-                                            lineNumber: 234,
+                                            lineNumber: 206,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1136,7 +1102,7 @@ function Experience() {
                                                             children: "EXPERIENCE"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 242,
+                                                            lineNumber: 214,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1144,7 +1110,7 @@ function Experience() {
                                                             children: String(__TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STATS"].experience.years).padStart(2, '0')
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 243,
+                                                            lineNumber: 215,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1152,13 +1118,13 @@ function Experience() {
                                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STATS"].experience.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 244,
+                                                            lineNumber: 216,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/experience/page.tsx",
-                                                    lineNumber: 241,
+                                                    lineNumber: 213,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1168,7 +1134,7 @@ function Experience() {
                                                             children: "PROJECTS"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 249,
+                                                            lineNumber: 221,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1176,7 +1142,7 @@ function Experience() {
                                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STATS"].projects.count
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 250,
+                                                            lineNumber: 222,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1184,13 +1150,13 @@ function Experience() {
                                                             children: __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STATS"].projects.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 251,
+                                                            lineNumber: 223,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/experience/page.tsx",
-                                                    lineNumber: 248,
+                                                    lineNumber: 220,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1200,7 +1166,7 @@ function Experience() {
                                                             children: "CONTRIBUTIONS"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 256,
+                                                            lineNumber: 228,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1208,7 +1174,7 @@ function Experience() {
                                                             children: totalContributions > 0 ? totalContributions : __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STATS"].contributions.default
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 257,
+                                                            lineNumber: 229,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1216,13 +1182,13 @@ function Experience() {
                                                             children: totalContributions > 0 ? 'this month' : __TURBOPACK__imported__module__$5b$project$5d2f$constants$2f$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STATS"].contributions.label
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 260,
+                                                            lineNumber: 232,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/experience/page.tsx",
-                                                    lineNumber: 255,
+                                                    lineNumber: 227,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1233,7 +1199,7 @@ function Experience() {
                                                             children: "SKILL_MATRIX"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 267,
+                                                            lineNumber: 239,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1248,7 +1214,7 @@ function Experience() {
                                                                                     children: skill.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 272,
+                                                                                    lineNumber: 244,
                                                                                     columnNumber: 27
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1259,13 +1225,13 @@ function Experience() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 273,
+                                                                                    lineNumber: 245,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 271,
+                                                                            lineNumber: 243,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1277,29 +1243,29 @@ function Experience() {
                                                                                 }
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                lineNumber: 276,
+                                                                                lineNumber: 248,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 275,
+                                                                            lineNumber: 247,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, i, true, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 270,
+                                                                    lineNumber: 242,
                                                                     columnNumber: 23
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 268,
+                                                            lineNumber: 240,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/experience/page.tsx",
-                                                    lineNumber: 266,
+                                                    lineNumber: 238,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1313,7 +1279,7 @@ function Experience() {
                                                                     children: "ACTIVITY_LOG"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 289,
+                                                                    lineNumber: 261,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1333,13 +1299,13 @@ function Experience() {
                                                                                     children: year
                                                                                 }, year, false, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 300,
+                                                                                    lineNumber: 272,
                                                                                     columnNumber: 29
                                                                                 }, this);
                                                                             })
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 292,
+                                                                            lineNumber: 264,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1365,24 +1331,24 @@ function Experience() {
                                                                                     children: month
                                                                                 }, index + 1, false, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 315,
+                                                                                    lineNumber: 287,
                                                                                     columnNumber: 27
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 306,
+                                                                            lineNumber: 278,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 291,
+                                                                    lineNumber: 263,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 288,
+                                                            lineNumber: 260,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1399,7 +1365,7 @@ function Experience() {
                                                                             })
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 325,
+                                                                            lineNumber: 297,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         !loadingContributions && totalContributions > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1411,13 +1377,13 @@ function Experience() {
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 329,
+                                                                            lineNumber: 301,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 324,
+                                                                    lineNumber: 296,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1435,12 +1401,12 @@ function Experience() {
                                                                             children: i % 2 === 0 ? day : ''
                                                                         }, i, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 338,
+                                                                            lineNumber: 310,
                                                                             columnNumber: 25
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 336,
+                                                                    lineNumber: 308,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 loadingContributions ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1451,12 +1417,12 @@ function Experience() {
                                                                             className: "h-3 w-3 rounded-sm bg-muted border border-primary/10 animate-pulse"
                                                                         }, i, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 348,
+                                                                            lineNumber: 320,
                                                                             columnNumber: 27
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 346,
+                                                                    lineNumber: 318,
                                                                     columnNumber: 23
                                                                 }, this) : contributions.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "text-center py-4",
@@ -1466,7 +1432,7 @@ function Experience() {
                                                                             children: "No contribution data available for this month"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 353,
+                                                                            lineNumber: 325,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1487,19 +1453,19 @@ function Experience() {
                                                                                         className: `h-3 w-3 rounded-sm border ${date ? 'bg-muted border-primary/10' : ''}`
                                                                                     }, i, false, {
                                                                                         fileName: "[project]/app/experience/page.tsx",
-                                                                                        lineNumber: 371,
+                                                                                        lineNumber: 343,
                                                                                         columnNumber: 31
                                                                                     }, this));
                                                                             })()
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 354,
+                                                                            lineNumber: 326,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 352,
+                                                                    lineNumber: 324,
                                                                     columnNumber: 23
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "grid grid-cols-7 gap-1",
@@ -1526,7 +1492,7 @@ function Experience() {
                                                                                     className: "h-3 w-3"
                                                                                 }, i, false, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 402,
+                                                                                    lineNumber: 374,
                                                                                     columnNumber: 38
                                                                                 }, this);
                                                                             // Empty cell
@@ -1588,7 +1554,7 @@ function Experience() {
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 448,
+                                                                                            lineNumber: 420,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1600,32 +1566,32 @@ function Experience() {
                                                                                             })
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 451,
+                                                                                            lineNumber: 423,
                                                                                             columnNumber: 35
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                             className: "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-muted border-r border-b border-primary/50 rotate-45"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 454,
+                                                                                            lineNumber: 426,
                                                                                             columnNumber: 35
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 447,
+                                                                                    lineNumber: 419,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             }, i, false, {
                                                                                 fileName: "[project]/app/experience/page.tsx",
-                                                                                lineNumber: 442,
+                                                                                lineNumber: 414,
                                                                                 columnNumber: 31
                                                                             }, this);
                                                                         });
                                                                     })()
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 377,
+                                                                    lineNumber: 349,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1638,7 +1604,7 @@ function Experience() {
                                                                                     children: "Less"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 465,
+                                                                                    lineNumber: 437,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1648,54 +1614,54 @@ function Experience() {
                                                                                             className: "w-3 h-3 rounded-sm bg-muted border border-primary/10"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 467,
+                                                                                            lineNumber: 439,
                                                                                             columnNumber: 27
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                             className: "w-3 h-3 rounded-sm bg-primary/20 border border-primary/30"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 468,
+                                                                                            lineNumber: 440,
                                                                                             columnNumber: 27
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                             className: "w-3 h-3 rounded-sm bg-primary/40 border border-primary/50"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 469,
+                                                                                            lineNumber: 441,
                                                                                             columnNumber: 27
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                             className: "w-3 h-3 rounded-sm bg-primary/60 border border-primary/70"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 470,
+                                                                                            lineNumber: 442,
                                                                                             columnNumber: 27
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                             className: "w-3 h-3 rounded-sm bg-primary border border-primary"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 471,
+                                                                                            lineNumber: 443,
                                                                                             columnNumber: 27
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 466,
+                                                                                    lineNumber: 438,
                                                                                     columnNumber: 25
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: "More"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 473,
+                                                                                    lineNumber: 445,
                                                                                     columnNumber: 25
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 464,
+                                                                            lineNumber: 436,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         !loadingContributions && contributions.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1708,7 +1674,7 @@ function Experience() {
                                                                                             children: "Active days:"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 478,
+                                                                                            lineNumber: 450,
                                                                                             columnNumber: 29
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1720,13 +1686,13 @@ function Experience() {
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 479,
+                                                                                            lineNumber: 451,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                    lineNumber: 477,
+                                                                                    lineNumber: 449,
                                                                                     columnNumber: 27
                                                                                 }, this),
                                                                                 (()=>{
@@ -1741,7 +1707,7 @@ function Experience() {
                                                                                                     children: "Best day:"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                                    lineNumber: 490,
+                                                                                                    lineNumber: 462,
                                                                                                     columnNumber: 35
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1756,13 +1722,13 @@ function Experience() {
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                                                    lineNumber: 491,
+                                                                                                    lineNumber: 463,
                                                                                                     columnNumber: 35
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                                            lineNumber: 489,
+                                                                                            lineNumber: 461,
                                                                                             columnNumber: 33
                                                                                         }, this);
                                                                                     }
@@ -1771,60 +1737,60 @@ function Experience() {
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/experience/page.tsx",
-                                                                            lineNumber: 476,
+                                                                            lineNumber: 448,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/experience/page.tsx",
-                                                                    lineNumber: 463,
+                                                                    lineNumber: 435,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/experience/page.tsx",
-                                                            lineNumber: 322,
+                                                            lineNumber: 294,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/experience/page.tsx",
-                                                    lineNumber: 287,
+                                                    lineNumber: 259,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/experience/page.tsx",
-                                            lineNumber: 239,
+                                            lineNumber: 211,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/experience/page.tsx",
-                                    lineNumber: 233,
+                                    lineNumber: 205,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/experience/page.tsx",
-                                lineNumber: 232,
+                                lineNumber: 204,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/experience/page.tsx",
-                        lineNumber: 140,
+                        lineNumber: 112,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/experience/page.tsx",
-                lineNumber: 105,
+                lineNumber: 77,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/experience/page.tsx",
-        lineNumber: 101,
+        lineNumber: 73,
         columnNumber: 5
     }, this);
 }

@@ -1,10 +1,18 @@
 {
   "app": {
-    "[project]/app/_not-found/page": [
+    "[project]/app/about/page": [
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
       "static/media/b8b552e8609c5636-s.p.25aba60b.woff2"
     ],
-    "[project]/app/about/page": [
+    "[project]/app/contact/page": [
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
+      "static/media/b8b552e8609c5636-s.p.25aba60b.woff2"
+    ],
+    "[project]/app/education/page": [
+      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
+      "static/media/b8b552e8609c5636-s.p.25aba60b.woff2"
+    ],
+    "[project]/app/experience/page": [
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
       "static/media/b8b552e8609c5636-s.p.25aba60b.woff2"
     ],
@@ -13,10 +21,6 @@
       "static/media/b8b552e8609c5636-s.p.25aba60b.woff2"
     ],
     "[project]/app/projects/page": [
-      "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
-      "static/media/b8b552e8609c5636-s.p.25aba60b.woff2"
-    ],
-    "[project]/app/skills/page": [
       "static/media/0c89a48fa5027cee-s.p.4564287c.woff2",
       "static/media/b8b552e8609c5636-s.p.25aba60b.woff2"
     ]

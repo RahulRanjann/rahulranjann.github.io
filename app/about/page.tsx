@@ -2,168 +2,9 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect } from "react"
 import { useTypeWriter } from "@/hooks/use-typewriter"
 import { ABOUT_DATA, ABOUT_SKILLS, SOCIAL_LINKS, PAGE_HEADINGS } from "@/constants/data"
-
-// Matrix Rain Profile Image Component
-function MatrixProfileImage({ src, alt }: { src: string; alt: string }) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [loadProgress, setLoadProgress] = useState(0)
-  const [isRevealed, setIsRevealed] = useState(false)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number | null>(null)
-  const progressRef = useRef<NodeJS.Timeout | null>(null)
-
-  // Matrix rain animation
-  const startMatrixRain = useCallback(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    canvas.width = 224 // w-56 = 14rem = 224px
-    canvas.height = 224
-
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF'
-    const fontSize = 10
-    const columns = canvas.width / fontSize
-    const drops: number[] = Array(Math.floor(columns)).fill(1)
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(5, 5, 5, 0.1)'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-      ctx.fillStyle = '#00ff9d'
-      ctx.font = `${fontSize}px monospace`
-
-      for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)]
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize)
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0
-        }
-        drops[i]++
-      }
-
-      animationRef.current = requestAnimationFrame(draw)
-    }
-
-    draw()
-  }, [])
-
-  const stopMatrixRain = useCallback(() => {
-    if (animationRef.current) {
-      cancelAnimationFrame(animationRef.current)
-      animationRef.current = null
-    }
-  }, [])
-
-  useEffect(() => {
-    if (isHovered && !isRevealed) {
-      // Start matrix rain
-      startMatrixRain()
-      
-      // Start loading progress
-      setLoadProgress(0)
-      progressRef.current = setInterval(() => {
-        setLoadProgress(prev => {
-          if (prev >= 100) {
-            if (progressRef.current) clearInterval(progressRef.current)
-            setIsRevealed(true)
-            return 100
-          }
-          return prev + 4 // ~2.5 seconds to complete
-        })
-      }, 100)
-    } else if (!isHovered) {
-      // Reset on mouse leave
-      stopMatrixRain()
-      if (progressRef.current) clearInterval(progressRef.current)
-      setLoadProgress(0)
-      setIsRevealed(false)
-    }
-
-    return () => {
-      stopMatrixRain()
-      if (progressRef.current) clearInterval(progressRef.current)
-    }
-  }, [isHovered, isRevealed, startMatrixRain, stopMatrixRain])
-
-  // Fade out matrix when revealed
-  useEffect(() => {
-    if (isRevealed) {
-      const timeout = setTimeout(() => {
-        stopMatrixRain()
-      }, 500)
-      return () => clearTimeout(timeout)
-    }
-  }, [isRevealed, stopMatrixRain])
-
-  return (
-    <div 
-      className="relative w-56 h-56 mb-6 rounded-lg overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 shadow-[0_0_20px_rgba(0,255,157,0.2)] cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* Base Image */}
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className={`object-cover transition-all duration-500 ${isRevealed ? 'scale-105' : 'scale-100'}`}
-      />
-      
-      {/* Matrix rain canvas overlay */}
-      <canvas
-        ref={canvasRef}
-        className={`absolute inset-0 z-20 transition-opacity duration-500 ${
-          isHovered && !isRevealed ? 'opacity-90' : 'opacity-0'
-        }`}
-      />
-      
-      {/* Reveal mask - clips the image based on progress */}
-      <div 
-        className="absolute inset-0 bg-black z-10 transition-all duration-100"
-        style={{ 
-          clipPath: isHovered 
-            ? `inset(${100 - loadProgress}% 0 0 0)` 
-            : 'inset(100% 0 0 0)',
-          opacity: isHovered ? 0 : 1
-        }}
-      />
-      
-      {/* Loading percentage display */}
-      {isHovered && !isRevealed && (
-        <div className="absolute bottom-2 left-2 z-30 font-mono text-xs text-primary bg-black/70 px-2 py-1 rounded">
-          LOADING... {loadProgress}%
-        </div>
-      )}
-      
-      {/* System online badge when revealed */}
-      {isRevealed && (
-        <div className="absolute bottom-2 left-2 z-30 font-mono text-xs text-primary bg-black/70 px-2 py-1 rounded flex items-center gap-2 animate-fade-in">
-          <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-          LOADED
-        </div>
-      )}
-      
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent z-5 pointer-events-none" />
-      
-      {/* Corner brackets */}
-      <div className="absolute top-1 left-1 w-4 h-4 border-t-2 border-l-2 border-primary/50 z-30" />
-      <div className="absolute top-1 right-1 w-4 h-4 border-t-2 border-r-2 border-primary/50 z-30" />
-      <div className="absolute bottom-1 left-1 w-4 h-4 border-b-2 border-l-2 border-primary/50 z-30" />
-      <div className="absolute bottom-1 right-1 w-4 h-4 border-b-2 border-r-2 border-primary/50 z-30" />
-    </div>
-  )
-}
-
-// Note: Metadata must be in a separate file for client components
-// See app/about/metadata.ts
 
 export default function About() {
   const [showContent, setShowContent] = useState(false)
@@ -229,11 +70,19 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               {/* Left - Profile Image & Stats */}
               <div className="lg:col-span-2 flex flex-col items-center lg:items-start">
-                {/* Profile Image with Matrix Effect */}
-                <MatrixProfileImage 
-                  src={ABOUT_DATA.profileImage} 
-                  alt="Rahul Profile" 
-                />
+                {/* Profile Image */}
+                <div className="relative w-56 h-56 mb-6 rounded-lg overflow-hidden border-2 border-primary/30 hover:border-primary transition-all duration-300 group shadow-[0_0_20px_rgba(0,255,157,0.2)]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                  <Image
+                    src={ABOUT_DATA.profileImage}
+                    alt="Rahul Profile"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500 z-0"
+                  />
+                  {/* Scan line effect */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/10 to-transparent opacity-0 group-hover:opacity-100 animate-scan z-30 pointer-events-none" />
+                </div>
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4 w-full">

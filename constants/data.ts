@@ -87,7 +87,7 @@ export interface Stats {
 
 // ============ IMAGE URLS ============
 export const IMAGES = {
-  profile: "/rahulIMG.png",
+  profile: "/developer-profile-photo-cyber-aesthetic.jpg",
   projects: {
     cybersecurity: "/cybersecurity-scan-interface.jpg",
     crypto: "/crypto-dashboard.jpg",
@@ -393,11 +393,11 @@ export const ABOUT_DATA = {
   systemInfo: "< System.Rahul > v1.0.0",
   stats: {
     experience: {
-      value: "1+",
+      value: "5+",
       label: "Years Exp",
     },
     projects: {
-      value: "20+",
+      value: "42",
       label: "Projects",
     },
   },
@@ -423,7 +423,7 @@ export const ABOUT_DATA = {
 // ============ HOME PAGE DATA ============
 export const HOME_DATA = {
   name: "Hi, I'm Rahul",
-  role: "> Software Developer | Problem Solver_",
+  role: "> Full Stack Developer | Problem Solver_",
   description:
     "Blending tech and design to solve real problems. Building scalable web apps, automating workflows, and driving digital innovation. Let's turn lines of code into impactful solutions.",
   typingSpeed: {
@@ -445,7 +445,7 @@ export const STATS: Stats = {
     label: "years",
   },
   projects: {
-    count: "15+",
+    count: "7+",
     label: "deployed",
   },
   contributions: {
