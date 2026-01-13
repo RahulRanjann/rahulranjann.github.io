@@ -74,6 +74,26 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen pt-16 flex items-center justify-center overflow-hidden">
+      {/* SEO: Fallback content for crawlers when JS is disabled */}
+      <noscript>
+        <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <h1>Rahul Ranjan - Software Engineer</h1>
+          <p>
+            Software Engineer focused on user-centered, impactful products. 
+            Blending tech and design to solve real problems. Building scalable web apps, 
+            automating workflows, and driving digital innovation.
+          </p>
+          <p><strong>Skills:</strong> React, Next.js, TypeScript, JavaScript, Node.js, Python, MongoDB, PostgreSQL, AWS, Docker</p>
+          <nav style={{ marginTop: '1rem' }}>
+            <a href="/about">About</a> | 
+            <a href="/projects">Projects</a> | 
+            <a href="/skills">Skills</a> | 
+            <a href="/experience">Experience</a> | 
+            <a href="/education">Education</a> | 
+            <a href="/contact">Contact</a>
+          </nav>
+        </div>
+      </noscript>
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-background" />
@@ -183,3 +203,4 @@ export default function Home() {
     </main>
   )
 }
+

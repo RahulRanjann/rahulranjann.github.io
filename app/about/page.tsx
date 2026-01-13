@@ -217,7 +217,7 @@ export default function About() {
                 {/* Profile Image with Matrix Effect */}
                 <MatrixProfileImage 
                   src={ABOUT_DATA.profileImage} 
-                  alt="Rahul Profile" 
+                  alt="Rahul Ranjan - Software Engineer" 
                 />
 
                 {/* Stats Grid */}

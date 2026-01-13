@@ -402,9 +402,9 @@ export const ABOUT_DATA = {
     },
   },
   bio: {
-    title: "Full Stack Developer & Product Builder",
+    title: "Software Engineer & Product Builder",
     paragraphs: [
-      "Full Stack Developer focused on user-centered, impactful products. Blending tech and design to solve real problems. Born in 2000 in India with a mission-driven approach to using code and tech for positive change and innovation.",
+      "Software Engineer focused on user-centered, impactful products. Blending tech and design to solve real problems. Born in 2000 in India with a mission-driven approach to using code and tech for positive change and innovation.",
       "Currently building scalable web apps, automating digital workflows, and exploring AI-driven tooling. Passionate about product design, automation, and continuous learning. My favorite quote: \"There is nothing so useless as doing efficiently that which should not be done at all.\" — Peter Drucker.",
     ],
   },
@@ -423,7 +423,7 @@ export const ABOUT_DATA = {
 // ============ HOME PAGE DATA ============
 export const HOME_DATA = {
   name: "Hi, I'm Rahul",
-  role: "> Full Stack Developer | Problem Solver_",
+  role: "> Software Engineer | Problem Solver_",
   description:
     "Blending tech and design to solve real problems. Building scalable web apps, automating workflows, and driving digital innovation. Let's turn lines of code into impactful solutions.",
   typingSpeed: {
